@@ -12,6 +12,7 @@ window = sg.Window('Calculator', layout, default_button_element_size = (6, 3))
 
 Result = ''
 
+
 while True:
     button, value = window.Read()
     if button == 'C':
@@ -28,9 +29,6 @@ while True:
         Answer = str(round(float(Answer),3))
         window.find_element('input').Update(Answer)
         Result = Answer
-    event, values = window.read()
-    if event == sg.WIN_CLOSED:
-        break
     else:
         Result += button
         window.find_element('input').Update(Result)
